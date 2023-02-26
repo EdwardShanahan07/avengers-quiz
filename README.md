@@ -16,7 +16,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 The flowchart describes how the program will run and give me an idea of what functions and logic are needed.
 ![](./readme-assets/img/flowchart.jpg)
 
-### User Stores 
+### User Stories 
 - As a user, I want to see instructions on how the quiz works. 
 - As a user, I want the choice to play or quit the application after reading the instructions. 
 - As a user, I want to enter my name. 
