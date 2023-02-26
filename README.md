@@ -6,6 +6,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 
 - [User Experience](#user-experience)
   - [Flowchart](#flowchart)
+  - [User Stories](#user-stories)
 - [Credits](#credits)
   - [Resources](#resources)
 
@@ -13,6 +14,18 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 
 ### Flowchart
 The flowchart describes how the program will run and give me an idea of what functions and logic are needed.
+
+### User Stores 
+- As a user, I want to see instructions on how the quiz works. 
+- As a user, I want the choice to play or quit the application after reading the instructions. 
+- As a user, I want to enter my name. 
+- As a user, I want to see the question and multiple-choice options. 
+- As a user, I want to see if my answer choices were correct or incorrect. 
+- As a user, I want to keep track of what question number I am on. 
+- As a user, when I finish the quiz, I want to see my score. 
+- As a user, I want to see previous users' scores on a leaderboard. 
+- As a user, I want to choose to replay or quit the application. 
+
 
 ![](./readme-assets/img/flowchart.jpg)
 
