@@ -8,7 +8,8 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
   - [Flowchart](#flowchart)
   - [User Stories](#user-stories)
 - [Credits](#credits)
-  - [Resources](#resources)
+  - [Content](#content)
+  - [Media](#resources)
 
 ## User Experience 
 
@@ -27,9 +28,10 @@ The flowchart describes how the program will run and give me an idea of what fun
 - As a user, I want to see previous users' scores on a leaderboard. 
 - As a user, I want to choose to replay or quit the application. 
 
-
-
 ## Credits
 
-### Resources
+### Content
+- The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
+
+### Media
 - [FigJam](https://www.figma.com/figjam/) was used to create the flowchart.
