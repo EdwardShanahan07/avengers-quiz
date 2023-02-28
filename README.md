@@ -9,7 +9,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
   - [User Stories](#user-stories)
 - [Credits](#credits)
   - [Content](#content)
-  - [Media](#resources)
+  - [Media](#media)
 
 ## User Experience 
 
@@ -28,10 +28,18 @@ The flowchart describes how the program will run and give me an idea of what fun
 - As a user, I want to see previous users' scores on a leaderboard. 
 - As a user, I want to choose to replay or quit the application. 
 
+## Testing
+
+### Bugs 
+
+#### Fixed Bugs 
+- When printing the logo, I got the error message "EOL while scanning string literal." Two main reasons for this error message are missing quotes or strings spanning multiple lines. The Avengers logo spans numerous lines, I added triple quotes to the string and it fixed the error.
+
 ## Credits
 
 ### Content
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
+- Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
 
 ### Media
 - [FigJam](https://www.figma.com/figjam/) was used to create the flowchart.
