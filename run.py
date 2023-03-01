@@ -91,6 +91,31 @@ quiz_data = [
     },
 ]
 
+user_name = ""
+
+def begin_quiz():
+    
+    """
+    Get users name and prompt the user if they wish to play the quiz
+    """
+
+    global user_name
+    
+    user_name = input("Please enter your name\n")
+
+    play_quiz = ""
+
+    while play_quiz not in ["y", "n"]:
+        play_quiz = input(("Do you want to begin the quiz? (y/n)")).lower()
+
+        if(play_quiz == "n"):
+            print(f"Thank you {user_name}, please try the quiz another time!")
+
+            quit()
+
+
+def run_quiz ():
+    print("Quiz begins")
 
 
 def load_quiz_information():
@@ -123,6 +148,3 @@ def load_quiz_information():
     print("The choices are a, b, c, and d for all ten questions.\n")
 
     print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
-
-
-load_quiz_information()
