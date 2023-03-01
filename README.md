@@ -19,8 +19,8 @@ The flowchart describes how the program will run and give me an idea of what fun
 
 ### User Stories 
 - As a user, I want to see instructions on how the quiz works. 
-- As a user, I want the choice to play or quit the application after reading the instructions. 
 - As a user, I want to enter my name. 
+- As a user, I want the choice to play or quit the application. 
 - As a user, I want to see the question and multiple-choice options. 
 - As a user, I want to see if my answer choices were correct or incorrect. 
 - As a user, I want to keep track of what question number I am on. 
