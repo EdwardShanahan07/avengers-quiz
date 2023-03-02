@@ -93,6 +93,8 @@ quiz_data = [
 
 user_name = ""
 
+score = 0
+
 def begin_quiz():
     
     """
@@ -115,8 +117,39 @@ def begin_quiz():
 
 
 def run_quiz ():
-    print("Quiz begins")
+    """
+    Loop through quiz_data and print question and options.
+    Prompt the correct answer and check if the answer is correct or incorrect
+    """
+    global score
 
+    for quiz in quiz_data:
+        answer = ""
+        while answer not in ["a", "b", "c", "d"]:
+            
+            print(quiz["question"] + "\n")
+
+            for option in quiz["options"]:
+                print(option)
+
+            print("\n")
+
+            print("Please enter your answer (a, b, c, or d): ")
+
+            answer = input()
+
+            print("\n")
+
+        if(answer == quiz["answer"]):
+            print("Correct answer\n")
+
+            score += 1
+        else:
+            print("Incorrect answer\n")
+
+        print("------------------------------------------ \n")
+
+            
 
 def load_quiz_information():
     """ 
@@ -148,3 +181,19 @@ def load_quiz_information():
     print("The choices are a, b, c, and d for all ten questions.\n")
 
     print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
+
+
+
+def main(): 
+    """
+    Call programs main functions
+    """
+
+    load_quiz_information()
+
+    begin_quiz()
+
+    run_quiz()
+
+
+main()
