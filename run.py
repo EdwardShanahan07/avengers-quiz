@@ -115,37 +115,54 @@ def begin_quiz():
 
             quit()
 
+def print_question(question, options):
+    """
+    Print questions and loop through options array and print each value
+    """
+
+    print(question + "\n")
+
+    for option in options:
+        print(option)
+
+    print("Please enter your answer (a, b, c, or d): ")
+
+
+def check_answer(answer, question_answer):
+    """
+    Checks answer to question answers, if the two value equals 
+    each other a point will be added to score.
+    If the answer is wrong no point will be added.
+    """
+    global score
+
+    if(answer.lower() == question_answer.lower()):
+        print("Correct answer\n")
+
+        score += 1
+    else:
+        print("Incorrect answer\n")
+
+
 
 def run_quiz ():
     """
     Loop through quiz_data and print question and options.
     Prompt the correct answer and check if the answer is correct or incorrect
     """
-    global score
 
     for quiz in quiz_data:
         answer = ""
+
         while answer not in ["a", "b", "c", "d"]:
             
-            print(quiz["question"] + "\n")
+            print_question(quiz["question"], quiz["options"])
 
-            for option in quiz["options"]:
-                print(option)
-
-            print("\n")
-
-            print("Please enter your answer (a, b, c, or d): ")
-
-            answer = input()
+            answer = input().lower()
 
             print("\n")
 
-        if(answer == quiz["answer"]):
-            print("Correct answer\n")
-
-            score += 1
-        else:
-            print("Incorrect answer\n")
+        check_answer(answer, quiz["answer"])
 
         print("------------------------------------------ \n")
 
@@ -186,7 +203,7 @@ def load_quiz_information():
 
 def main(): 
     """
-    Call programs main functions
+    Call program main functions
     """
 
     load_quiz_information()
