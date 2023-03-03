@@ -108,17 +108,19 @@ def begin_quiz():
     play_quiz = ""
 
     while play_quiz not in ["y", "n"]:
-        play_quiz = input(("Do you want to begin the quiz? (y/n)")).lower()
+        play_quiz = input(("Do you want to begin the quiz? (y/n) \n")).lower()
 
         if(play_quiz == "n"):
             print(f"Thank you {user_name}, please try the quiz another time!")
 
             quit()
 
-def print_question(question, options):
+def print_question(index, question, options):
     """
     Print questions and loop through options array and print each value
     """
+
+    print(f"Question {index}/10 \n")
 
     print(question + "\n")
 
@@ -144,19 +146,18 @@ def check_answer(answer, question_answer):
         print("Incorrect answer\n")
 
 
-
 def run_quiz ():
     """
     Loop through quiz_data and print question and options.
     Prompt the correct answer and check if the answer is correct or incorrect
     """
 
-    for quiz in quiz_data:
+    for index, quiz in enumerate(quiz_data,start=1):
         answer = ""
 
         while answer not in ["a", "b", "c", "d"]:
-            
-            print_question(quiz["question"], quiz["options"])
+
+            print_question(index, quiz["question"], quiz["options"])
 
             answer = input().lower()
 
