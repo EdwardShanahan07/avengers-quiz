@@ -92,13 +92,12 @@ quiz_data = [
 ]
 
 user_name = ""
-
 score = 0
 
 def begin_quiz():
     
     """
-    Get users name and prompt the user if they wish to play the quiz
+    Get users name and prompt the user if they wish to play the quiz.
     """
 
     global user_name
@@ -115,7 +114,7 @@ def begin_quiz():
 
             quit()
 
-def print_question(index, question, options):
+def display_question(index, question, options):
     """
     Print questions and loop through options array and print each value
     """
@@ -132,9 +131,9 @@ def print_question(index, question, options):
 
 def check_answer(answer, question_answer):
     """
-    Checks answer to question answers, if the two value equals 
-    each other a point will be added to score.
-    If the answer is wrong no point will be added.
+    Checks the answers to the questions if both values are equal. 
+    One point will be added to the score. 
+    If the answer is wrong no points will be added.
     """
     global score
 
@@ -148,8 +147,9 @@ def check_answer(answer, question_answer):
 
 def run_quiz ():
     """
-    Loop through quiz_data and print question and options.
-    Prompt the correct answer and check if the answer is correct or incorrect
+    Loop through quiz_data and print questions and options. 
+    Request the correct answer and verify whether the 
+    answer is correct or incorrect.
     """
 
     for index, quiz in enumerate(quiz_data,start=1):
@@ -169,9 +169,9 @@ def run_quiz ():
 
             
 
-def load_quiz_information():
+def quiz_information():
     """ 
-    Print the avengers logo and information about the quiz 
+    Print the Avengers logo and information about the quiz.
     """
 
     print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
