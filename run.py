@@ -157,7 +157,7 @@ def run_quiz ():
 
         while answer not in ["a", "b", "c", "d"]:
 
-            print_question(index, quiz["question"], quiz["options"])
+            display_question(index, quiz["question"], quiz["options"])
 
             answer = input().lower()
 
@@ -166,6 +166,8 @@ def run_quiz ():
         check_answer(answer, quiz["answer"])
 
         print("------------------------------------------ \n")
+
+    display_score()
 
             
 
@@ -201,13 +203,40 @@ def quiz_information():
     print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
 
 
+def display_score():
+    """
+    Print the score and ask the user if they are interested in replaying.
+    If the user chooses to play again, the replay_quiz function will be called.
+    If the user decides not to play again, the application will quit.
+    """
+
+    print(f"Congratulations {user_name}, on completing the quiz!\n")
+
+    play_again = ""
+
+    print(f"You scored {score}/10\n")
+
+    while play_again not in ["y", "n"]:
+        play_again = input("Would you like to replay the quiz? (y/n)\n")
+
+        if play_again.lower() == "y":
+            print("Restarting quiz....\n")
+            replay_quiz()
+        elif play_again.lower() == "n": 
+            print(f"Thank you {user_name}, for taking the quiz!\n")
+            print("Quitting application.....")
+            quit()
+
+
+def replay_quiz():
+    print("Replay quiz!!")
 
 def main(): 
     """
     Call program main functions
     """
 
-    load_quiz_information()
+    quiz_information()
 
     begin_quiz()
 
