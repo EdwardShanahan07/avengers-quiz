@@ -107,6 +107,7 @@ def begin_quiz():
     play_quiz = ""
 
     while play_quiz not in ["y", "n"]:
+       
         play_quiz = input(("Do you want to begin the quiz? (y/n) \n")).lower()
 
         if(play_quiz == "n"):
@@ -229,7 +230,14 @@ def display_score():
 
 
 def replay_quiz():
-    print("Replay quiz!!")
+    """
+    Prints restarting messages and calls run_quiz function.
+    """
+    print("Restarting the quiz\n")
+
+    print(f"Best of luck {user_name}\n")
+
+    run_quiz()
 
 def main(): 
     """
