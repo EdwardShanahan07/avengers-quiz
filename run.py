@@ -115,6 +115,9 @@ def begin_quiz():
 
             quit()
 
+        if(play_quiz not in ["y", "n"]):
+                print("Invalid Input! Please enter yes (y) or no (n)\n")
+
 def display_question(index, question, options):
     """
     Print questions and loop through options array and print each value
@@ -163,6 +166,9 @@ def run_quiz ():
             answer = input().lower()
 
             print("\n")
+
+            if(answer not in ["a", "b", "c", "d"]):
+                print("Invalid Input! Please enter a, b, c, or d\n")
 
         check_answer(answer, quiz["answer"])
 
@@ -219,6 +225,9 @@ def display_score():
 
     while play_again not in ["y", "n"]:
         play_again = input("Would you like to replay the quiz? (y/n)\n")
+
+        if(play_again not in ["y", "n"]):
+                print("Invalid Input! Please enter yes (y) or no (n)\n")
 
         if play_again.lower() == "y":
             print("Restarting quiz....\n")
