@@ -259,6 +259,11 @@ def replay_quiz():
     """
     Prints restarting messages and calls run_quiz function.
     """
+
+    global score
+
+    score = 0
+
     print("Restarting the quiz\n")
 
     print(f"Best of luck {user_name}\n")
