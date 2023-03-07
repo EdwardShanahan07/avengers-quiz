@@ -38,6 +38,7 @@ The flowchart describes how the program will run and give me an idea of what fun
 ## Credits
 
 ### Content
+- Code Institute [Love Sandwiches](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) code helped to connect application to Google Sheets API
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
 
