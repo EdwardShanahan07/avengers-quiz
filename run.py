@@ -16,8 +16,6 @@ sales = SHEET.worksheet('leaderboard')
 
 data = sales.get_all_values()
 
-print(data)
-
 quiz_data = [
     {
     "question": "During which war did Captain America get his superhuman abilities?", 
@@ -194,10 +192,9 @@ def run_quiz ():
 
         print("------------------------------------------ \n")
 
-    display_score()
+    display_result()
 
             
-
 def quiz_information():
     """ 
     Print the Avengers logo and information about the quiz.
@@ -230,7 +227,7 @@ def quiz_information():
     print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
 
 
-def display_score():
+def display_result():
     """
     Print the score and ask the user if they are interested in replaying.
     If the user chooses to play again, the replay_quiz function will be called.
