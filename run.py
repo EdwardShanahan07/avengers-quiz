@@ -14,7 +14,6 @@ SHEET = GSPREAD_CLIENT.open('avengers_quiz')
 
 sales = SHEET.worksheet('leaderboard')
 
-data = sales.get_all_values()
 
 quiz_data = [
     {
@@ -113,7 +112,6 @@ user_name = ""
 score = 0
 
 def begin_quiz():
-    
     """
     Get users name and prompt the user if they wish to play the quiz.
     """
@@ -227,6 +225,19 @@ def quiz_information():
     print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
 
 
+def update_leaderboard(data):
+    """
+    Add user-name and score to Google Sheets
+    """
+
+    print("Exporting your results to database....\n")
+
+    update_workout = SHEET.worksheet("leaderboard")
+    update_workout.append_row(data)
+
+    print("Results exporting successfully!!\n")
+
+
 def display_result():
     """
     Print the score and ask the user if they are interested in replaying.
@@ -239,6 +250,10 @@ def display_result():
     play_again = ""
 
     print(f"You scored {score}/10\n")
+
+    data = [user_name, score]
+
+    update_leaderboard(data)
 
     while play_again not in ["y", "n"]:
         play_again = input("Would you like to replay the quiz? (y/n)\n")
