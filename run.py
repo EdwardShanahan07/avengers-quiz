@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from time import sleep
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -237,10 +238,36 @@ def update_leaderboard(data):
 
     print("Results exporting successfully!!\n")
 
+def display_leaderboard():
+    """
+    Get all values from the leaderboard worksheet.
+    Sort the values array to get top scores first on the list.
+    Print out username and score of the top 5 results
+    """
+    def score_value_key(elem):
+        return elem[1]
+
+    data = SHEET.worksheet("leaderboard")
+
+    values = data.get_all_values()
+
+    values.sort(key=score_value_key, reverse=True)
+
+    print(values)
+
+    print("Top 5 users\n")
+
+    print("Username\t Score\n")
+
+    for index in range(0, 5):
+        print(f"{values[index][0]}\t\t {values[index][1]}\n")
+
+
 
 def display_result():
     """
     Print the score and ask the user if they are interested in replaying.
+    Calls update_leaderboard function to add user name and score Google Sheets
     If the user chooses to play again, the replay_quiz function will be called.
     If the user decides not to play again, the application will quit.
     """
@@ -254,6 +281,10 @@ def display_result():
     data = [user_name, score]
 
     update_leaderboard(data)
+
+    sleep(4)
+
+    display_leaderboard()
 
     while play_again not in ["y", "n"]:
         play_again = input("Would you like to replay the quiz? (y/n)\n")
