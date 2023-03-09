@@ -1,8 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from time import sleep
-
 import sys,time
+import os
 
 
 SCOPE = [
@@ -125,6 +125,14 @@ def slow_print(str, duration):
         sys.stdout.flush()
         time.sleep(duration)
 
+def clear_terminal(): 
+    """
+    Pauses the terminal for 5 seconds and clears the terminal
+    """
+    sleep(2)
+
+    os.system('clear')
+
 def begin_quiz():
     """
     Get users name and prompt the user if they wish to play the quiz.
@@ -147,6 +155,8 @@ def begin_quiz():
 
         if(play_quiz not in ["y", "n"]):
                 slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
+
+    clear_terminal()
 
 def display_question(index, question, options):
     """
@@ -202,7 +212,7 @@ def run_quiz ():
 
         check_answer(answer, quiz["answer"])
 
-        print("------------------------------------------ \n")
+        clear_terminal()
 
     display_result()
 
@@ -296,7 +306,7 @@ def display_result():
     display_leaderboard()
 
     while play_again not in ["y", "n"]:
-        play_again = input("Would you like to replay the quiz? (y/n)\n", 4./90)
+        play_again = input("Would you like to replay the quiz? (y/n)\n")
 
         if(play_again not in ["y", "n"]):
                 slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
@@ -322,6 +332,8 @@ def replay_quiz():
     slow_print("Restarting the quiz\n", 4./90)
 
     slow_print(f"Best of luck {user_name}\n", 4./90)
+
+    clear_terminal()
 
     run_quiz()
 
