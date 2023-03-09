@@ -40,6 +40,7 @@ The flowchart describes how the program will run and give me an idea of what fun
 ### Content
 - Code Institute [Love Sandwiches](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) code helped to connect application to Google Sheets API
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
+- Simulate typing effect in the terminal [Slack Overflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
 
 ### Media
