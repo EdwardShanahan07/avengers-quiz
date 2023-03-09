@@ -2,6 +2,9 @@ import gspread
 from google.oauth2.service_account import Credentials
 from time import sleep
 
+import sys,time
+
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -112,6 +115,16 @@ quiz_data = [
 user_name = ""
 score = 0
 
+def slow_print(str, duration):
+    """
+    Pints out string in a typing effect.
+    """
+    
+    for c in str + '\n':
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(duration)
+
 def begin_quiz():
     """
     Get users name and prompt the user if they wish to play the quiz.
@@ -128,12 +141,12 @@ def begin_quiz():
         play_quiz = input(("Do you want to begin the quiz? (y/n) \n")).lower()
 
         if(play_quiz == "n"):
-            print(f"Thank you {user_name}, please try the quiz another time!")
+            slow_print(f"Thank you {user_name}, please try the quiz another time!", 4./90)
 
             quit()
 
         if(play_quiz not in ["y", "n"]):
-                print("Invalid Input! Please enter yes (y) or no (n)\n")
+                slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
 
 def display_question(index, question, options):
     """
@@ -142,12 +155,12 @@ def display_question(index, question, options):
 
     print(f"Question {index}/10 \n")
 
-    print(question + "\n")
+    slow_print(question + "\n", 3./90)
 
     for option in options:
-        print(option)
+        slow_print(option, 3./90)
 
-    print("Please enter your answer (a, b, c, or d): ")
+    slow_print("Please enter your answer (a, b, c, or d): ", 3./90)
 
 
 def check_answer(answer, question_answer):
@@ -159,11 +172,11 @@ def check_answer(answer, question_answer):
     global score
 
     if(answer.lower() == question_answer.lower()):
-        print("Correct answer\n")
+        slow_print("Correct answer\n", 4./90)
 
         score += 1
     else:
-        print("Incorrect answer\n")
+        slow_print("Incorrect answer\n", 4./90)
 
 
 def run_quiz ():
@@ -185,7 +198,7 @@ def run_quiz ():
             print("\n")
 
             if(answer not in ["a", "b", "c", "d"]):
-                print("Invalid Input! Please enter a, b, c, or d\n")
+                slow_print("Invalid Input! Please enter a, b, c, or d\n", 4./90)
 
         check_answer(answer, quiz["answer"])
 
@@ -199,7 +212,7 @@ def quiz_information():
     Print the Avengers logo and information about the quiz.
     """
 
-    print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+    slow_print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣤⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣠⣴⣿⡿⠟⠛⠋⣽⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀
@@ -213,17 +226,17 @@ def quiz_information():
 ⠀⠈⠛⣰⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠠⠾⠿⠇⠀⣠⣿⡿⠁⠀
 ⠀⠀⣰⣿⣿⣿⡟⣀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⡿⠋⠀⠀⠀
 ⠀⣰⣿⣿⣿⡿⠰⠿⣿⣶⣶⣶⣶⣶⣶⣿⠿⠟⠉⠀⠀⠀⠀⠀
-⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""")
+⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""", 2./90)
 
-    print("Welcome to the Avengers quiz!\n")
+    slow_print("Welcome to the Avengers quiz!\n", 3./90)
 
-    print("Take this quiz to see how well you know the Marvel film series, Avengers.\n")
+    slow_print("Take this quiz to see how well you know the Marvel film series, Avengers.\n", 4./90)
 
-    print("There are ten questions in total, and all questions are multiple-choice.\n")
+    slow_print("There are ten questions in total, and all questions are multiple-choice.\n", 4./90)
 
-    print("The choices are a, b, c, and d for all ten questions.\n")
+    slow_print("The choices are a, b, c, and d for all ten questions.\n", 4./90)
 
-    print("Please enter a, b, c, or d and hit the enter key to answer the question\n")
+    slow_print("Please enter a, b, c, or d and hit the enter key to answer the question.\n", 4./90)
 
 
 def update_leaderboard(data):
@@ -231,12 +244,12 @@ def update_leaderboard(data):
     Add user-name and score to Google Sheets
     """
 
-    print("Exporting your results to database....\n")
+    slow_print("Exporting your results to database....\n", 4./90)
 
     update_workout = SHEET.worksheet("leaderboard")
     update_workout.append_row(data)
 
-    print("Results exporting successfully!!\n")
+    slow_print("Results exporting successfully!!\n", 4./90)
 
 def display_leaderboard():
     """
@@ -253,11 +266,9 @@ def display_leaderboard():
 
     values.sort(key=score_value_key, reverse=True)
 
-    print(values)
+    slow_print("Top 5 users\n", 4./90)
 
-    print("Top 5 users\n")
-
-    print("Username\t Score\n")
+    slow_print("Username\t Score\n", 4./90)
 
     for index in range(0, 5):
         print(f"{values[index][0]}\t\t {values[index][1]}\n")
@@ -272,32 +283,30 @@ def display_result():
     If the user decides not to play again, the application will quit.
     """
 
-    print(f"Congratulations {user_name}, on completing the quiz!\n")
+    slow_print(f"Congratulations {user_name}, on completing the quiz!\n", 4./90)
 
     play_again = ""
 
-    print(f"You scored {score}/10\n")
+    slow_print(f"You scored {score}/10\n", 4./90)
 
     data = [user_name, score]
 
     update_leaderboard(data)
 
-    sleep(4)
-
     display_leaderboard()
 
     while play_again not in ["y", "n"]:
-        play_again = input("Would you like to replay the quiz? (y/n)\n")
+        play_again = input("Would you like to replay the quiz? (y/n)\n", 4./90)
 
         if(play_again not in ["y", "n"]):
-                print("Invalid Input! Please enter yes (y) or no (n)\n")
+                slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
 
         if play_again.lower() == "y":
-            print("Restarting quiz....\n")
+            slow_print("Restarting quiz....\n", 4./90)
             replay_quiz()
         elif play_again.lower() == "n": 
-            print(f"Thank you {user_name}, for taking the quiz!\n")
-            print("Quitting application.....")
+            slow_print(f"Thank you {user_name}, for taking the quiz!\n", 4./90)
+            slow_print("Quitting application.....")
             quit()
 
 
@@ -310,9 +319,9 @@ def replay_quiz():
 
     score = 0
 
-    print("Restarting the quiz\n")
+    slow_print("Restarting the quiz\n", 4./90)
 
-    print(f"Best of luck {user_name}\n")
+    slow_print(f"Best of luck {user_name}\n", 4./90)
 
     run_quiz()
 
