@@ -1,7 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from time import sleep
-import sys,time
+import sys, time
 import os
 
 
@@ -338,7 +338,7 @@ def display_result():
             replay_quiz()
         elif play_again.lower() == "n": 
             slow_print(f"Thank you {user_name}, for taking the quiz!\n", 4./90)
-            slow_print("Quitting application.....")
+            slow_print("Quitting application.....", 4./90)
             quit()
 
 
