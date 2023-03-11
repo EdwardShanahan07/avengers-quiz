@@ -18,7 +18,6 @@ SHEET = GSPREAD_CLIENT.open('avengers_quiz')
 
 sales = SHEET.worksheet('leaderboard')
 
-
 quiz_data = [
     {
     "question": "During which war did Captain America get his superhuman abilities?", 
@@ -113,7 +112,17 @@ quiz_data = [
 ]
 
 user_name = ""
+
 score = 0
+
+def clear_terminal(): 
+    """
+    Pauses the terminal for 5 seconds and clears the terminal
+    """
+    sleep(2)
+
+    os.system('clear')
+
 
 def slow_print(str, duration):
     """
@@ -125,13 +134,6 @@ def slow_print(str, duration):
         sys.stdout.flush()
         time.sleep(duration)
 
-def clear_terminal(): 
-    """
-    Pauses the terminal for 5 seconds and clears the terminal
-    """
-    sleep(2)
-
-    os.system('clear')
 
 def validate_user_name(user_name):
 
@@ -148,6 +150,36 @@ def validate_user_name(user_name):
         print("Name shouldn’t be less than 3 chartectors!")
     else: 
         return True
+
+def display_question(index, question, options):
+    """
+    Print questions and loop through options array and print each value
+    """
+
+    print(f"Question {index}/10 \n")
+
+    slow_print(question + "\n", 3./90)
+
+    for option in options:
+        slow_print(option, 3./90)
+
+    slow_print("Please enter your answer (a, b, c, or d): ", 3./90)
+
+
+def check_answer(answer, question_answer):
+    """
+    Checks the answers to the questions if both values are equal. 
+    One point will be added to the score. 
+    If the answer is wrong no points will be added.
+    """
+    global score
+
+    if(answer.lower() == question_answer.lower()):
+        slow_print("Correct answer\n", 4./90)
+
+        score += 1
+    else:
+        slow_print("Incorrect answer\n", 4./90)
 
 
 def quiz_information():
@@ -210,36 +242,6 @@ def begin_quiz():
 
     clear_terminal()
 
-def display_question(index, question, options):
-    """
-    Print questions and loop through options array and print each value
-    """
-
-    print(f"Question {index}/10 \n")
-
-    slow_print(question + "\n", 3./90)
-
-    for option in options:
-        slow_print(option, 3./90)
-
-    slow_print("Please enter your answer (a, b, c, or d): ", 3./90)
-
-
-def check_answer(answer, question_answer):
-    """
-    Checks the answers to the questions if both values are equal. 
-    One point will be added to the score. 
-    If the answer is wrong no points will be added.
-    """
-    global score
-
-    if(answer.lower() == question_answer.lower()):
-        slow_print("Correct answer\n", 4./90)
-
-        score += 1
-    else:
-        slow_print("Incorrect answer\n", 4./90)
-
 
 def run_quiz ():
     """
@@ -267,7 +269,6 @@ def run_quiz ():
         clear_terminal()
 
     display_result()
-
 
 
 def update_leaderboard(data):
@@ -304,7 +305,6 @@ def display_leaderboard():
 
     for index in range(0, 5):
         print(f"{values[index][0]}\t\t {values[index][1]}\n")
-
 
 
 def display_result():
