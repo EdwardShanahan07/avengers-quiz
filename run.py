@@ -133,6 +133,23 @@ def clear_terminal():
 
     os.system('clear')
 
+def validate_user_name(user_name):
+
+    """
+    Validates user_name input to see if it matches the criteria.
+    """
+    
+    if user_name == "":
+        print("Please don't enter an empty value!")
+    elif len(user_name) > 12:
+        print("Name shouldn’t be more than 12 chartectors long!")
+
+    elif len(user_name) < 3:
+        print("Name shouldn’t be less than 3 chartectors!")
+    else: 
+        return True
+
+
 def quiz_information():
     """ 
     Print the Avengers logo and information about the quiz.
@@ -171,7 +188,11 @@ def begin_quiz():
 
     global user_name
     
-    user_name = input("Please enter your name\n")
+    while True:
+        user_name = input("Please enter your name\n").strip()
+
+        if validate_user_name(user_name):
+            break
 
     play_quiz = ""
 
@@ -260,6 +281,7 @@ def update_leaderboard(data):
     update_workout.append_row(data)
 
     slow_print("Results exporting successfully!!\n", 4./90)
+
 
 def display_leaderboard():
     """
