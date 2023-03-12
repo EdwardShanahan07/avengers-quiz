@@ -50,12 +50,11 @@ def validate_user_name(user_name):
     """
     
     if user_name == "":
-        print("Please don't enter an empty value!")
+        slow_print("Please don't enter an empty value!\n", 4./90)
     elif len(user_name) > 12:
-        print("Name shouldn’t be more than 12 chartectors long!")
-
+        slow_print("Name shouldn’t be more than 12 chartectors long!\n", 4./90)
     elif len(user_name) < 3:
-        print("Name shouldn’t be less than 3 chartectors!")
+        slow_print("Name shouldn’t be less than 3 chartectors!\n", 4./90)
     else: 
         return True
 
@@ -129,7 +128,7 @@ def begin_quiz():
     global user_name
     
     while True:
-        user_name = input("Please enter your name\n").strip()
+        user_name = input("Please enter your user name and hit the enter key:\n").strip()
 
         if validate_user_name(user_name):
             break
