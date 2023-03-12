@@ -38,7 +38,13 @@ The flowchart describes how the program will run and give me an idea of what fun
 ### Bugs 
 
 #### Fixed Bugs 
-- When printing the logo, I got the error message "EOL while scanning string literal." Two main reasons for this error message are missing quotes or strings spanning multiple lines. The Avengers logo spans numerous lines, I added triple quotes to the string and it fixed the error.
+
+| Bug | Error Message |  Fix |
+| -------------        |     -------------      |         ------------- |
+| Logo not printing to the terminal  | "EOL while scanning string literal."    | The logo spans multiple lines of code. I used triple quotations to fix this error.    |
+| No validation when entering user name  | None   | Added validate_username function. This function will check for validation    |
+
+
 
 ## Deployment 
 
