@@ -48,7 +48,6 @@ The flowchart describes how the program will run and give me an idea of what fun
 | No validation when entering user name  | None   | Added validate_username function. This function will check for validation    |
 
 
-
 ## Deployment 
 
 ### Local Deployment
@@ -89,10 +88,11 @@ These steps were used to deploy this app using [Heroku](https://www.heroku.com/)
 
 ## Credits
 
-### Content
+### Code Used
 - Code Institute [Love Sandwiches](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) code helped to connect application to Google Sheets API
+
+### Content
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
-- Simulate typing effect in the terminal [Slack Overflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
 
 ### Media

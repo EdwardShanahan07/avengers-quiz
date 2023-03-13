@@ -25,22 +25,11 @@ score = 0
 
 def clear_terminal(): 
     """
-    Pauses the terminal for 5 seconds and clears the terminal
+    Pauses the terminal for 2 seconds and clears the terminal
     """
     sleep(2)
 
     os.system('clear')
-
-
-def slow_print(str, duration):
-    """
-    Pints out string in a typing effect.
-    """
-    
-    for c in str + '\n':
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(duration)
 
 
 def validate_user_name(user_name):
@@ -50,11 +39,11 @@ def validate_user_name(user_name):
     """
     
     if user_name == "":
-        slow_print("Please don't enter an empty value!\n", 4./90)
+        print("Please don't enter an empty value!\n")
     elif len(user_name) > 12:
-        slow_print("Name shouldn’t be more than 12 chartectors long!\n", 4./90)
+        print("Name shouldn’t be more than 12 chartectors long!\n")
     elif len(user_name) < 3:
-        slow_print("Name shouldn’t be less than 3 chartectors!\n", 4./90)
+        print("Name shouldn’t be less than 3 chartectors!\n")
     else: 
         return True
 
@@ -65,12 +54,12 @@ def display_question(index, question, options):
 
     print(f"Question {index}/10 \n")
 
-    slow_print(question + "\n", 3./90)
+    print(question + "\n")
 
     for option in options:
-        slow_print(option, 3./90)
+        print(option)
 
-    slow_print("Please enter your answer (a, b, c, or d): ", 3./90)
+    print("Please enter your answer (a, b, c, or d):")
 
 
 def check_answer(answer, question_answer):
@@ -82,11 +71,11 @@ def check_answer(answer, question_answer):
     global score
 
     if(answer.lower() == question_answer.lower()):
-        slow_print("Correct answer\n", 4./90)
+        print("Correct answer\n")
 
         score += 1
     else:
-        slow_print("Incorrect answer\n", 4./90)
+        print("Incorrect answer\n")
 
 
 def quiz_information():
@@ -94,7 +83,7 @@ def quiz_information():
     Print the Avengers logo and information about the quiz.
     """
 
-    slow_print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+    print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣤⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣠⣴⣿⡿⠟⠛⠋⣽⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀
@@ -108,17 +97,17 @@ def quiz_information():
 ⠀⠈⠛⣰⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠠⠾⠿⠇⠀⣠⣿⡿⠁⠀
 ⠀⠀⣰⣿⣿⣿⡟⣀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⡿⠋⠀⠀⠀
 ⠀⣰⣿⣿⣿⡿⠰⠿⣿⣶⣶⣶⣶⣶⣶⣿⠿⠟⠉⠀⠀⠀⠀⠀
-⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""", 2./90)
+⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""")
 
-    slow_print("Welcome to the Avengers quiz!\n", 3./90)
+    print("Welcome to the Avengers quiz!\n")
 
-    slow_print("Take this quiz to see how well you know the Marvel film series, Avengers.\n", 4./90)
+    print("Take this quiz to see how well you know the Marvel film series, Avengers.\n")
 
-    slow_print("There are ten questions in total, and all questions are multiple-choice.\n", 4./90)
+    print("There are ten questions in total, and all questions are multiple-choice.\n")
 
-    slow_print("The choices are a, b, c, and d for all ten questions.\n", 4./90)
+    print("The choices are a, b, c, and d for all ten questions.\n")
 
-    slow_print("Please enter a, b, c, or d and hit the enter key to answer the question.\n", 4./90)
+    print("Please enter a, b, c, or d and hit the enter key to answer the question.\n")
 
 def begin_quiz():
     """
@@ -140,12 +129,12 @@ def begin_quiz():
         play_quiz = input(("Do you want to begin the quiz? (y/n) \n")).lower()
 
         if(play_quiz == "n"):
-            slow_print(f"Thank you {user_name}, please try the quiz another time!", 4./90)
+            print(f"Thank you {user_name}, please try the quiz another time!")
 
             quit()
 
         if(play_quiz not in ["y", "n"]):
-                slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
+                print("Invalid Input! Please enter yes (y) or no (n)\n",)
 
     clear_terminal()
 
@@ -169,7 +158,7 @@ def run_quiz ():
             print("\n")
 
             if(answer not in ["a", "b", "c", "d"]):
-                slow_print("Invalid Input! Please enter a, b, c, or d\n", 4./90)
+                print("Invalid Input! Please enter a, b, c, or d\n")
 
         check_answer(answer, quiz["answer"])
 
@@ -183,12 +172,12 @@ def update_leaderboard(data):
     Add user-name and score to Google Sheets
     """
 
-    slow_print("Exporting your results to database....\n", 4./90)
+    print("Exporting your results to database....\n")
 
     update_workout = SHEET.worksheet("leaderboard")
     update_workout.append_row(data)
 
-    slow_print("Results exporting successfully!!\n", 4./90)
+    print("Results exporting successfully!!\n")
 
 
 def display_leaderboard():
@@ -206,9 +195,9 @@ def display_leaderboard():
 
     values.sort(key=score_value_key, reverse=True)
 
-    slow_print("Top 5 users\n", 4./90)
+    print("Top 5 users\n")
 
-    slow_print("Username\t Score\n", 4./90)
+    print("Username\t Score\n")
 
     for index in range(0, 5):
         print(f"{values[index][0]}\t\t {values[index][1]}\n")
@@ -222,11 +211,11 @@ def display_result():
     If the user decides not to play again, the application will quit.
     """
 
-    slow_print(f"Congratulations {user_name}, on completing the quiz!\n", 4./90)
+    print(f"Congratulations {user_name}, on completing the quiz!\n")
 
     play_again = ""
 
-    slow_print(f"You scored {score}/10\n", 4./90)
+    print(f"You scored {score}/10\n")
 
     data = [user_name, score]
 
@@ -238,14 +227,14 @@ def display_result():
         play_again = input("Would you like to replay the quiz? (y/n)\n")
 
         if(play_again not in ["y", "n"]):
-                slow_print("Invalid Input! Please enter yes (y) or no (n)\n", 4./90)
+                print("Invalid Input! Please enter yes (y) or no (n)\n")
 
         if play_again.lower() == "y":
-            slow_print("Restarting quiz....\n", 4./90)
+            print("Restarting quiz....\n")
             replay_quiz()
         elif play_again.lower() == "n": 
-            slow_print(f"Thank you {user_name}, for taking the quiz!\n", 4./90)
-            slow_print("Quitting application.....", 4./90)
+            print(f"Thank you {user_name}, for taking the quiz!\n")
+            print("Quitting application.....")
             quit()
 
 
@@ -258,9 +247,9 @@ def replay_quiz():
 
     score = 0
 
-    slow_print("Restarting the quiz\n", 4./90)
+    print("Restarting the quiz\n")
 
-    slow_print(f"Best of luck {user_name}\n", 4./90)
+    print(f"Best of luck {user_name}\n")
 
     clear_terminal()
 
@@ -277,5 +266,5 @@ def main():
 
     run_quiz()
 
-
 main()
+
