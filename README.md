@@ -9,6 +9,10 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 - [User Experience](#user-experience)
   - [Flowchart](#flowchart)
   - [User Stories](#user-stories)
+- [Technologies Used](#technologies-used)
+  - [Language](#language)
+  - [Libraries](#libraries)
+  - [Programs Used](#programs-used)
 - [Testing](#testing)
   - [Bugs](#bugs)
     - [Fixed Bugs](#fixed-bugs)
@@ -35,6 +39,27 @@ The flowchart describes how the program will run and give me an idea of what fun
 - As a user, when I finish the quiz, I want to see my score. 
 - As a user, I want to see previous users' scores on a leaderboard. 
 - As a user, I want to choose to replay or quit the application. 
+
+## Technologies Used
+
+### Languages 
+
+- Python
+
+### Libraries 
+
+- os library was used to clear the terminal.
+- time library was used to pause the terminal for a short duration.
+- gspread was used to connect application to Google Sheets.
+- google.oauth2.service_account grants the application access to Google Cloud API
+
+### Programs Used
+
+- Git was used for version control
+- GitHub to store applications code
+- GitPod was used to code the application
+- [FigJam](https://www.figma.com/figjam/) was used to create the flowchart.
+
 
 ## Testing
 
@@ -96,4 +121,4 @@ These steps were used to deploy this app using [Heroku](https://www.heroku.com/)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
 
 ### Media
-- [FigJam](https://www.figma.com/figjam/) was used to create the flowchart.
+
