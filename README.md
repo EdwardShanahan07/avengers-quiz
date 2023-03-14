@@ -76,10 +76,20 @@ The flowchart describes how the program will run and give me an idea of what fun
 ## Deployment 
 
 ### Local Deployment
-To deploy this project locally, use Git clone in the terminal:
+
+#### How to Clone
+1. Open up a terminal
+2. Change to the directory where you want the location of the cloned depository 
+3. Copy the code below and paste it into the terminal:
 ```console
 git clone https://github.com/EdwardShanahan07/avengers-quiz.git
 ```
+4. Hit the enter key to clone the depositiry
+
+#### How to Fork
+1. Login or signup to Github
+2. Search for this repository: [EdwardShanahan07/avengers-quiz](https://github.com/EdwardShanahan07/avengers-quiz)
+3. Ont the top right corner, click Fork
 
 ### Heroku Deployment
 These steps were used to deploy this app using [Heroku](https://www.heroku.com/):
