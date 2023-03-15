@@ -71,6 +71,7 @@ The flowchart describes how the program will run and give me an idea of what fun
 | -------------        |     -------------      |         ------------- |
 | Logo not printing to the terminal  | "EOL while scanning string literal."    | The logo spans multiple lines of code. I used triple quotations to fix this error.    |
 | No validation when entering user name  | None   | Added validate_username function. This function will check for validation    |
+| display_leaderboard not sorting list by score properly. |  None   | Added sort_by_score function. This function will return the score as an integer. When the leaderboard is displayed it will sort by the highest score first     |
 
 
 ## Deployment 
