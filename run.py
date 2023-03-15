@@ -16,7 +16,6 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('avengers_quiz')
-
 sales = SHEET.worksheet('leaderboard')
 
 user_name = ""
@@ -59,28 +58,28 @@ def display_question(index, question, options):
     for option in options:
         print(option)
 
-    print("Please enter your answer (a, b, c, or d):")
+    print("Please enter your answer (a, b, c, or d):\n")
 
 
 def check_answer(answer, question_answer):
     """
     Checks the answers to the questions if both values are equal. 
-    One point will be added to the score. 
+    One point will be added to the score, if the answer is correct. 
     If the answer is wrong no points will be added.
     """
     global score
 
     if(answer.lower() == question_answer.lower()):
-        print("Correct answer\n")
+        print("Correct answer!\n")
 
         score += 1
     else:
-        print("Incorrect answer\n")
+        print("Incorrect answer!\n")
 
 def sort_by_score(elem):
     """
     Sort the leaderboard list by the score value
-    and returns the value into integer
+    and returns the value into integer.
     """
     return int(elem[1])
 
@@ -119,7 +118,7 @@ def quiz_information():
 
 def begin_quiz():
     """
-    Get users name and prompt the user if they wish to play the quiz.
+    Get user name and prompt the user if they wish to play the quiz.
     """
 
     global user_name
@@ -185,14 +184,14 @@ def update_leaderboard(data):
     update_workout = SHEET.worksheet("leaderboard")
     update_workout.append_row(data)
 
-    print("Results exporting successfully!!\n")
+    print("Results exported successfully!!\n")
 
 
 def display_leaderboard():
     """
     Get all values from the leaderboard worksheet.
     Sort the values array to get top scores first on the list.
-    Print out username and score of the top 5 results
+    Print out username and score of the top 5 highest vales
     """
 
     data = SHEET.worksheet("leaderboard")
