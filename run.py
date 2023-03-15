@@ -77,6 +77,13 @@ def check_answer(answer, question_answer):
     else:
         print("Incorrect answer\n")
 
+def sort_by_score(elem):
+    """
+    Sort the leaderboard list by the score value
+    and returns the value into integer
+    """
+    return int(elem[1])
+
 
 def quiz_information():
     """ 
@@ -186,14 +193,12 @@ def display_leaderboard():
     Sort the values array to get top scores first on the list.
     Print out username and score of the top 5 results
     """
-    def score_value_key(elem):
-        return elem[1]
 
     data = SHEET.worksheet("leaderboard")
 
     values = data.get_all_values()
 
-    values.sort(key=score_value_key, reverse=True)
+    values.sort(key=sort_by_score, reverse=True)
 
     print("Top 5 users\n")
 
@@ -210,6 +215,8 @@ def display_result():
     If the user chooses to play again, the replay_quiz function will be called.
     If the user decides not to play again, the application will quit.
     """
+
+    global score
 
     print(f"Congratulations {user_name}, on completing the quiz!\n")
 
@@ -231,6 +238,8 @@ def display_result():
 
         if play_again.lower() == "y":
             print("Restarting quiz....\n")
+            
+            score = 0
             replay_quiz()
         elif play_again.lower() == "n": 
             print(f"Thank you {user_name}, for taking the quiz!\n")
@@ -238,14 +247,13 @@ def display_result():
             quit()
 
 
+display_leaderboard()
+
+
 def replay_quiz():
     """
     Prints restarting messages and calls run_quiz function.
     """
-
-    global score
-
-    score = 0
 
     print("Restarting the quiz\n")
 
