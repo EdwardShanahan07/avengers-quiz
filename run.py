@@ -1,7 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from time import sleep
-import sys, time
+import sys
 import os
 from quiz import quiz_data
 
@@ -115,6 +115,7 @@ def quiz_information():
     print("The choices are a, b, c, and d for all ten questions.\n")
 
     print("Please enter a, b, c, or d and hit the enter key to answer the question.\n")
+
 
 def begin_quiz():
     """
