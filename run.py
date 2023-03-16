@@ -1,8 +1,8 @@
+from time import sleep
+import os
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
-from time import sleep
-import sys
-import os
 from quiz import quiz_data
 
 
@@ -22,7 +22,8 @@ user_name = ""
 
 score = 0
 
-def clear_terminal(): 
+
+def clear_terminal():
     """
     Pauses the terminal for 2 seconds and clears the terminal
     """
@@ -32,19 +33,18 @@ def clear_terminal():
 
 
 def validate_user_name(user_name):
-
     """
     Validates user_name input to see if it matches the criteria.
     """
-    
     if user_name == "":
         print("Please don't enter an empty value!\n")
     elif len(user_name) > 12:
         print("Name shouldn’t be more than 12 chartectors long!\n")
     elif len(user_name) < 3:
         print("Name shouldn’t be less than 3 chartectors!\n")
-    else: 
+    else:
         return True
+
 
 def display_question(index, question, options):
     """
@@ -63,18 +63,19 @@ def display_question(index, question, options):
 
 def check_answer(answer, question_answer):
     """
-    Checks the answers to the questions if both values are equal. 
-    One point will be added to the score, if the answer is correct. 
+    Checks the answers to the questions if both values are equal.
+    One point will be added to the score, if the answer is correct.
     If the answer is wrong no points will be added.
     """
     global score
 
-    if(answer.lower() == question_answer.lower()):
+    if answer.lower() == question_answer.lower():
         print("Correct answer!\n")
 
         score += 1
     else:
         print("Incorrect answer!\n")
+
 
 def sort_by_score(elem):
     """
@@ -85,7 +86,7 @@ def sort_by_score(elem):
 
 
 def quiz_information():
-    """ 
+    """
     Print the Avengers logo and information about the quiz.
     """
 
@@ -122,7 +123,6 @@ def begin_quiz():
     """
 
     global user_name
-    
     while True:
         user_name = input("Please enter your user name and hit the enter key:\n").strip()
 
@@ -132,28 +132,27 @@ def begin_quiz():
     play_quiz = ""
 
     while play_quiz not in ["y", "n"]:
-       
         play_quiz = input(("Do you want to begin the quiz? (y/n) \n")).lower()
 
-        if(play_quiz == "n"):
+        if play_quiz == "n":
             print(f"Thank you {user_name}, please try the quiz another time!")
 
-            quit()
+            sys.exit()
 
-        if(play_quiz not in ["y", "n"]):
-                print("Invalid Input! Please enter yes (y) or no (n)\n",)
+        if play_quiz not in ["y", "n"]:
+            print("Invalid Input! Please enter yes (y) or no (n)\n",)
 
     clear_terminal()
 
 
-def run_quiz ():
+def run_quiz():
     """
-    Loop through quiz_data and print questions and options. 
-    Request the correct answer and verify whether the 
-    answer is correct or incorrect.
+    Loop through quiz_data and print questions and options.
+    Request the correct answer and verify whether the answer
+    is correct or incorrect.
     """
 
-    for index, quiz in enumerate(quiz_data,start=1):
+    for index, quiz in enumerate(quiz_data, start=1):
         answer = ""
 
         while answer not in ["a", "b", "c", "d"]:
@@ -164,7 +163,7 @@ def run_quiz ():
 
             print("\n")
 
-            if(answer not in ["a", "b", "c", "d"]):
+            if answer not in ["a", "b", "c", "d"]:
                 print("Invalid Input! Please enter a, b, c, or d\n")
 
         check_answer(answer, quiz["answer"])
@@ -233,21 +232,17 @@ def display_result():
     while play_again not in ["y", "n"]:
         play_again = input("Would you like to replay the quiz? (y/n)\n")
 
-        if(play_again not in ["y", "n"]):
-                print("Invalid Input! Please enter yes (y) or no (n)\n")
+        if play_again not in ["y", "n"]:
+            print("Invalid Input! Please enter yes (y) or no (n)\n")
 
         if play_again.lower() == "y":
             print("Restarting quiz....\n")
-            
             score = 0
             replay_quiz()
-        elif play_again.lower() == "n": 
+        elif play_again.lower() == "n":
             print(f"Thank you {user_name}, for taking the quiz!\n")
             print("Quitting application.....")
             quit()
-
-
-display_leaderboard()
 
 
 def replay_quiz():
@@ -263,10 +258,9 @@ def replay_quiz():
 
     run_quiz()
 
-def main(): 
-    """
-    Call program main functions
-    """
+
+def main():
+    """Call program main functions"""
 
     quiz_information()
 
@@ -274,5 +268,5 @@ def main():
 
     run_quiz()
 
-main()
 
+main()
