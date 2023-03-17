@@ -10,7 +10,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
   - [Flowchart](#flowchart)
   - [User Stories](#user-stories)
 - [Technologies Used](#technologies-used)
-  - [Language](#language)
+  - [Languages](#languages)
   - [Libraries](#libraries)
   - [Programs Used](#programs-used)
 - [Testing](#testing)
@@ -39,6 +39,29 @@ The flowchart describes how the program will run and give me an idea of what fun
 - As a user, when I finish the quiz, I want to see my score. 
 - As a user, I want to see previous users' scores on a leaderboard. 
 - As a user, I want to choose to replay or quit the application. 
+
+## Features 
+
+### Welcome
+![](./readme-assets/img/features-welcome.png)
+
+### Instructions 
+![](./readme-assets/img/features-information.png)
+
+### Create User Name
+![](./readme-assets/img/features-username.png)
+
+### Quiz Questions
+![](./readme-assets/img/features-questiona.png)
+
+### Results
+![](./readme-assets/img/features-results.png)
+
+### Leaderboard
+![](./readme-assets/img/features-leaderboard.png)
+
+### Play Again
+![](./readme-assets/img/features-replay-quiz.png)
 
 ## Technologies Used
 
