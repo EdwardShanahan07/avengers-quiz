@@ -1,6 +1,7 @@
 quiz_data = [
     {
-        "question": "During which war did Captain America get his superhuman abilities?",
+        "question": "During which war did Captain America get his superhuman "
+        "abilities?",
         "options": [
             "(a) Civil War",
             "(b) World War I",
@@ -18,7 +19,8 @@ quiz_data = [
         "answer": "b"
     },
     {
-        "question": "Which of the following characters did not disappear during the ”blip”?",
+        "question": "Which of the following characters did not disappear "
+        "during the ”blip”?",
         "options": [
             "(a) Spiderman",
             "(b) Black Panther",
@@ -27,7 +29,8 @@ quiz_data = [
         "answer": "d"
     },
     {
-        "question": "Which of the following characters dies in Avengers (2012)?",
+        "question": "Which of the following characters dies in "
+        "Avengers (2012)?",
         "options": [
             "(a) Nick Fury",
             "(b) Steve Rogers",
@@ -45,7 +48,8 @@ quiz_data = [
         "answer": "d"
     },
     {
-        "question": "In Avengers Infinity War, Tony Stark tells Bruce Banner: “You are embarrassing me in front of the…”",
+        "question": "In Avengers Infinity War, Tony Stark tells Bruce Banner: "
+        "“You are embarrassing me in front of the…”",
         "options": [
             "(a) Magicians",
             "(b) Avengers",
@@ -72,7 +76,8 @@ quiz_data = [
         "answer": "b"
     },
     {
-        "question": "How did Steve Rogers and Sam Wilson meet for the first time?",
+        "question": "How did Steve Rogers and Sam Wilson meet for? "
+        "the first time",
         "options": [
             "(a) While running",
             "(b) At a bar",

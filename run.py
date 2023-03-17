@@ -107,17 +107,17 @@ def quiz_information():
 ⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""")
 
     print("Welcome to the Avengers quiz!\n")
-    
+
     sleep(2)
 
-    print("Take this quiz to see how well you know the Marvel film series, Avengers.\n")
+    print("Test your knowledge of the Marvel Avengers movie series.\n")
 
-    print("There are ten questions in total, and all questions are multiple-choice.\n")
+    print("There are ten questions in total.\n")
+
+    print("All questions are multiple-choice.\n")
 
     print("The choices are a, b, c, and d for all ten questions.\n")
 
-    print("Please enter a, b, c, or d and hit the enter key to answer the question.\n")
-    
     sleep(2)
 
 
@@ -127,8 +127,11 @@ def begin_quiz():
     """
 
     global user_name
+
     while True:
-        user_name = input("Please enter your user name and hit the enter key:\n").strip()
+        print("Please enter your user name and hit the enter key:")
+
+        user_name = input().strip()
 
         if validate_user_name(user_name):
             break
@@ -158,7 +161,6 @@ def run_quiz():
 
     for index, quiz in enumerate(quiz_data, start=1):
         answer = ""
-        
         display_question(index, quiz["question"], quiz["options"])
 
         while answer not in ["a", "b", "c", "d"]:
@@ -227,7 +229,7 @@ def display_result():
     data = [user_name, score]
 
     update_leaderboard(data)
-    
+
     sleep(2)
 
     display_leaderboard()
