@@ -58,7 +58,7 @@ def display_question(index, question, options):
     for option in options:
         print(option)
 
-    print("Please enter your answer (a, b, c, or d):\n")
+    print("Please enter your answer (a, b, c, or d):")
 
 
 def check_answer(answer, question_answer):
@@ -107,6 +107,8 @@ def quiz_information():
 ⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""")
 
     print("Welcome to the Avengers quiz!\n")
+    
+    sleep(2)
 
     print("Take this quiz to see how well you know the Marvel film series, Avengers.\n")
 
@@ -115,6 +117,8 @@ def quiz_information():
     print("The choices are a, b, c, and d for all ten questions.\n")
 
     print("Please enter a, b, c, or d and hit the enter key to answer the question.\n")
+    
+    sleep(2)
 
 
 def begin_quiz():
@@ -154,17 +158,14 @@ def run_quiz():
 
     for index, quiz in enumerate(quiz_data, start=1):
         answer = ""
+        
+        display_question(index, quiz["question"], quiz["options"])
 
         while answer not in ["a", "b", "c", "d"]:
-
-            display_question(index, quiz["question"], quiz["options"])
-
             answer = input("\n").lower()
 
-            print("\n")
-
             if answer not in ["a", "b", "c", "d"]:
-                print("Invalid Input! Please enter a, b, c, or d\n")
+                print("Invalid Input! Please enter a, b, c, or d")
 
         check_answer(answer, quiz["answer"])
 
@@ -226,6 +227,8 @@ def display_result():
     data = [user_name, score]
 
     update_leaderboard(data)
+    
+    sleep(2)
 
     display_leaderboard()
 
