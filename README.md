@@ -27,7 +27,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 
 ### Flowchart
 The flowchart describes how the program will run and give me an idea of what functions and logic are needed.
-![](./readme-assets/img/flowchart.jpg)
+[](./readme-assets/img/flowchart.jpg)
 
 ### User Stories 
 - As a user, I want to see instructions on how the quiz works. 
@@ -85,6 +85,41 @@ The flowchart describes how the program will run and give me an idea of what fun
 
 
 ## Testing
+
+### Validation
+I used the [Code Institute Python](https://pep8ci.herokuapp.com/) Linter to check validation. I got multiple "line too long" error messages in both run.py and questions.py. I fixed both files, and no errors are appearing at this time.
+
+<details>
+
+  <summary>PEP8 questions.py before:</summary>
+
+  ![](./readme-assets/img/validation-questions-before.png)
+
+</details>
+
+<details>
+
+  <summary>PEP8 questions.py after:</summary>
+
+  ![](./readme-assets/img/validation-questions-after.png)
+
+</details>
+
+<details>
+
+  <summary>PEP8 run.py before:</summary>
+
+  ![](./readme-assets/img/validation-run-before.png)
+
+</details>
+
+<details>
+
+  <summary>PEP8 run.py after:</summary>
+
+  ![](./readme-assets/img/validation-run-after.png)
+
+</details>
 
 ### Bugs 
 
