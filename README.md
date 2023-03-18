@@ -16,6 +16,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 - [Testing](#testing)
   - [Bugs](#bugs)
     - [Fixed Bugs](#fixed-bugs)
+  - [Manual Testing](#manual-testing)
 - [Deployment](#deployment)
   - [Local Deployment](#local-deployment)
   - [Heroku Deployment](#heroku-deployment)
@@ -31,6 +32,7 @@ The flowchart describes how the program will run and give me an idea of what fun
 
 
 ### User Stories 
+- As a user, I want to see Avengers logo and welcome message. 
 - As a user, I want to see instructions on how the quiz works. 
 - As a user, I want to enter my name. 
 - As a user, I want the choice to play or quit the application. 
@@ -132,6 +134,22 @@ I used the [Code Institute Python](https://pep8ci.herokuapp.com/) Linter to chec
 | No validation when entering user name  | None   | Added validate_username function. This function will check for validation    |
 | display_leaderboard not sorting list by score properly. |  None   | Added sort_by_score function. This function will return the score as an integer. When the leaderboard is displayed it will sort by the highest score first     |
 
+### Manual Testing
+
+| Feature | Expected Outcome |  Testing Performed  | Result | Pass/Fail |
+| -------------        | -------------      | ------------- | ------------- | ------------- |
+Logo and welcome message | When the application begins, the Avengers logo and welcome message should display. | None | Logo and welcome message displayed correctly. | Pass |
+Quiz Information | Information about the quiz and how to play should be displayed. | None | Quiz information displayed correctly  | Pass |
+Create username | Option to enter user name| Typed my username | Enter my user name without any issues. | Pass |
+Play quiz | Choose to play or quit the quiz.| Type "y" to play the quiz. Type "n" to quit the quiz. | Quiz started when "y" key entered.  Application closed when the "n" key was entered. | Pass |
+Question and multiple choice option | The question and the four possible options should be displayed.| None | The question and four multiple-choice answers were displayed correctly.  | Pass |
+Check if my answer is correct or incorrect. | After I enter my answer, I should see if my answer is correct or incorrect.| Entered an option, and it was correct. I tested the next question, and the option was incorrect.|   | Pass |
+Keep track of the quiz's progress.  | I should see what question number I am on.| None | Question progress is updated with every question.  | Pass |
+Display results of quiz  | When I finish the quiz, I should see my result.| None | Result displayed correctly  | Pass |
+Display Leaderboard  | Leadboard should display with the scores of the top five users.| None | Leaderboard displayed correctly.  | Pass |
+Display Leaderboard  | Leadboard should display with the socre of the top five users| None | Leaderboard displayed correctly  | Pass |
+Replay quiz  | Option to replay or quit the quiz.z| Enter "y" to restart the quiz. Enter "n" to quit the application.  | The quiz restarted when "y" was entered, and the application closed when "n" was entered.  | Pass |
+
 
 ## Deployment 
 
@@ -189,6 +207,3 @@ These steps were used to deploy this app using [Heroku](https://www.heroku.com/)
 ### Content
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
-
-### Media
-
