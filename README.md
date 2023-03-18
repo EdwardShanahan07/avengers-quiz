@@ -44,25 +44,25 @@ The flowchart describes how the program will run and give me an idea of what fun
 ## Features 
 
 ### Welcome
-![](./readme-assets/img/features-welcome.png)
+![](./readme-assets/img/feature-welcome.png)
 
 ### Instructions 
-![](./readme-assets/img/features-information.png)
+![](./readme-assets/img/feature-information.png)
 
 ### Create User Name
-![](./readme-assets/img/features-username.png)
+![](./readme-assets/img/feature-username.png)
 
 ### Quiz Questions
-![](./readme-assets/img/features-questiona.png)
+![](./readme-assets/img/feature-questions.png)
 
 ### Results
-![](./readme-assets/img/features-results.png)
+![](./readme-assets/img/feature-results.png)
 
 ### Leaderboard
-![](./readme-assets/img/features-leaderboard.png)
+![](./readme-assets/img/feature-leaderboard.png)
 
 ### Play Again
-![](./readme-assets/img/features-replay-quiz.png)
+![](./readme-assets/img/feature-replay.png)
 
 ## Technologies Used
 
