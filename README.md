@@ -27,7 +27,8 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 
 ### Flowchart
 The flowchart describes how the program will run and give me an idea of what functions and logic are needed.
-[](./readme-assets/img/flowchart.jpg)
+![](./readme-assets/img/flowchart.jpg)
+
 
 ### User Stories 
 - As a user, I want to see instructions on how the quiz works. 
