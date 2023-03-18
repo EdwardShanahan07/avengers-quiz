@@ -16,6 +16,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
 - [Testing](#testing)
   - [Bugs](#bugs)
     - [Fixed Bugs](#fixed-bugs)
+    - [Known Bugs](#known-bugs)
   - [Manual Testing](#manual-testing)
 - [Deployment](#deployment)
   - [Local Deployment](#local-deployment)
@@ -134,6 +135,9 @@ I used the [Code Institute Python](https://pep8ci.herokuapp.com/) Linter to chec
 | No validation when entering user name  | None   | Added validate_username function. This function will check for validation    |
 | display_leaderboard not sorting list by score properly. |  None   | Added sort_by_score function. This function will return the score as an integer. When the leaderboard is displayed it will sort by the highest score first     |
 
+### Known Bugs
+No known bugs at this time.
+
 ### Manual Testing
 
 | Feature | Expected Outcome |  Testing Performed  | Result | Pass/Fail |
@@ -149,6 +153,7 @@ Display results of quiz  | When I finish the quiz, I should see my result.| None
 Display Leaderboard  | Leadboard should display with the scores of the top five users.| None | Leaderboard displayed correctly.  | Pass |
 Display Leaderboard  | Leadboard should display with the socre of the top five users| None | Leaderboard displayed correctly  | Pass |
 Replay quiz  | Option to replay or quit the quiz.z| Enter "y" to restart the quiz. Enter "n" to quit the application.  | The quiz restarted when "y" was entered, and the application closed when "n" was entered.  | Pass |
+
 
 
 ## Deployment 
