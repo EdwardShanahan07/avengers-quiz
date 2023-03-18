@@ -107,17 +107,11 @@ def quiz_information():
 ⠀⠉⠉⠉⠉⠁⠀⠀⠀⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n""")
 
     print("Welcome to the Avengers quiz!\n")
-
     sleep(2)
-
     print("Test your knowledge of the Marvel Avengers movie series.\n")
-
     print("There are ten questions in total.\n")
-
     print("All questions are multiple-choice.\n")
-
     print("The choices are a, b, c, and d for all ten questions.\n")
-
     sleep(2)
 
 
@@ -203,7 +197,6 @@ def display_leaderboard():
     values.sort(key=sort_by_score, reverse=True)
 
     print("Top 5 users\n")
-
     print("Username\t Score\n")
 
     for index in range(0, 5):
@@ -256,7 +249,6 @@ def replay_quiz():
     """
 
     print("Restarting the quiz\n")
-
     print(f"Best of luck {user_name}\n")
 
     clear_terminal()
