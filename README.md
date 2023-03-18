@@ -22,7 +22,7 @@ on the Marvel Avengers movie series. The quiz is a command-line application buil
   - [Heroku Deployment](#heroku-deployment)
 - [Credits](#credits)
   - [Content](#content)
-  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
 
 ## User Experience 
 
@@ -34,7 +34,7 @@ The flowchart describes how the program will run and give me an idea of what fun
 ### User Stories 
 - As a user, I want to see Avengers logo and welcome message. 
 - As a user, I want to see instructions on how the quiz works. 
-- As a user, I want to enter my name. 
+- As a user, I want to create my user name. 
 - As a user, I want the choice to play or quit the application. 
 - As a user, I want to see the question and multiple-choice options. 
 - As a user, I want to see if my answer choices were correct or incorrect. 
@@ -207,3 +207,11 @@ These steps were used to deploy this app using [Heroku](https://www.heroku.com/)
 ### Content
 - The quiz questions used are from [PONLY](https://ponly.com/marvel-trivia-quiz/)
 - Avengers logo was generated from [Emoji Combos](https://emojicombos.com/avengers-symbol)
+
+### Acknowledgments 
+
+Thanks to Code Institute for helping me build this application with their course content.
+
+Thanks to friends and family for testing this application.
+
+Thanks to my mentor, Jubril Akolade, for feedback on this project.
